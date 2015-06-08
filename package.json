@@ -1,0 +1,10 @@
+{
+  "name": "yctCronjob",
+  "version": "1.0.0",
+  "dependencies": {
+    "amqplib": "^0.3.2",
+    "cron": "^1.0.9",
+    "mongodb": "^2.0.33",
+    "q": "^1.4.1"
+  }
+}
