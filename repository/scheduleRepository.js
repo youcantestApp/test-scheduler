@@ -8,7 +8,7 @@ var getByPeriod = function (period) {
 	base.connect().then(function (db) {
 		var collection = db.collection(collectionName);
 
-		collection.find({ period: period }).toArray(function (err, docs) {
+		collection.find({ period: period, active: true }).toArray(function (err, docs) {
 			if (err != null) {
 				return defer.reject("unable to find -> error:" + err.message);
 			}
