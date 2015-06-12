@@ -13,7 +13,7 @@ var jobs = [
 
 (function () {
 	jobs.forEach(function (job) {
-		var actualHandler = new Handler(10);
+		var actualHandler = new Handler(job.minutes);
 
 		var cron = new CronJob(job.cronTime, actualHandler.execute, null, true, null, actualHandler);
 		console.log('starting '+ job.minutes +' cron at ' + new Date().toString());
