@@ -10,15 +10,19 @@ var jobs = [
 	{ cronTime: '0 0 12 * * 0', minutes : 10080 }
 ];
 
+var crons = [];
 
 (function () {
 	jobs.forEach(function (job) {
-		var actualHandler = new Handler(job.minutes);
+		var cron = {};
+		cron.handler = new Handler(job.minutes);
 
-		var cron = new CronJob(job.cronTime, actualHandler.execute, null, true, null, actualHandler);
+		cron.job = new CronJob(job.cronTime, cron.handler.execute, null, false, null, cron.handler);
+		cron.job.start();
+
 		console.log('starting '+ job.minutes +' cron at ' + new Date().toString());
 
-		cron.start();
+		crons.push(cron);
 	});
 })();
 
