@@ -3,9 +3,9 @@ var scheduleRepo = require('./repository/scheduleRepository');
 var amqp = require('amqplib');
 
 var queueConf = {
-	name: "youcantest.test_queue",
+	name: "yct.schedule",
 	options: {
-		durable: false
+		durable: true
 	}
 };
 
@@ -29,7 +29,7 @@ Handler.prototype.execute = function () {
 	//getting all scheduled tests in period
 	scheduleRepo.getByPeriod(this.period).then(function (list) {
 		if(list.length) {
-			//amqp.connect('amqp://admin:admin@rabbit').then(function (conn) {
+			// amqp.connect('amqp://admin:admin@ec2-52-26-16-39.us-west-2.compute.amazonaws.com').then(function (conn) {
 			amqp.connect('amqp://guest:guest@rabbit').then(function (conn) {
 				console.log('publishing ' + list.length + ' messages to test queue at ' + new Date().toString());
 				for(var i = 0;i<list.length;++i) {

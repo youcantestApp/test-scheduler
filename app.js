@@ -25,6 +25,3 @@ var crons = [];
 		crons.push(cron);
 	});
 })();
-
-
-
