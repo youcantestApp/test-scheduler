@@ -40,4 +40,12 @@ let config = _.extend({}, defaultConfig, envConfig, {period : period});
 var handler = new SchedulerHandler(config);
 
 console.log(`starting handler for period=${period} at ${new Date().toString()}`);
-handler.execute();
+console.log(`${process.env.cron_restart}  value of cron_Restart`);
+
+handler.execute((obj) => {
+  console.log("exiting...", obj);
+  setTimeout(() => {process.exit(0);}, 5000);
+}, (err) => {
+  console.log("exiting...", err);
+  setTimeout(() => {process.exit(0);}, 5000);
+});
