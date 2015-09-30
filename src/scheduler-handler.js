@@ -30,7 +30,7 @@ export default class SchedulerHandler {
   				console.log(`publishing ${list.length} messages to test queue at ${new Date().toString()}`);
           let arr = [];
   				for(let i = 0;i<list.length;++i) {
-            let str = JSON.stringify({ testId: list[i]._id.toString() });
+            let str = JSON.stringify({ scheduleId: list[i]._id.toString() });
             arr.push(this[queueService].publishMessage(str));
   				}
 
