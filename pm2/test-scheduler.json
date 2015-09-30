@@ -1,0 +1,113 @@
+{
+  "apps":
+  [
+    {
+      "name"             : "test-scheduler-5-minutes",
+      "args"             : ["-p 5"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 */5 * * * *",
+      "watch"            : false,
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "fork",
+      "autorestart"      : false,
+      "vizion"           : false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name"             : "test-scheduler-10-minutes",
+      "args"             : ["-p 10"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 */10 * * * *",
+      "watch"            : false,
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "fork",
+      "autorestart"      : false,
+      "vizion"           : false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name"             : "test-scheduler-60-minutes",
+      "args"             : ["-p 60"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 0 */1 * * *",
+      "watch"            : false,
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "fork",
+      "autorestart"      : false,
+      "vizion"           : false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name"             : "test-scheduler-720-minutes",
+      "args"             : ["-p 720"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 0 */12 * * *",
+      "watch"            : false,
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "fork",
+      "autorestart"      : false,
+      "vizion"           : false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name"             : "test-scheduler-1440-minutes",
+      "args"             : ["-p 1440"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 0 */24 * * *",
+      "watch"            : false,
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "fork",
+      "autorestart"      : false,
+      "vizion"           : false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    },
+    {
+      "name"             : "test-scheduler-10080-minutes",
+      "args"             : ["-p 10080"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 0 12 * * 0",
+      "watch"            : false,
+      "merge_logs"       : true,
+      "exec_interpreter" : "node",
+      "exec_mode"        : "fork",
+      "autorestart"      : false,
+      "vizion"           : false,
+      "env": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
