@@ -12,7 +12,7 @@
       "watch"            : false,
       "merge_logs"       : true,
       "exec_interpreter" : "node",
-      "exec_mode"        : "fork",
+      "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
@@ -30,7 +30,7 @@
       "watch"            : false,
       "merge_logs"       : true,
       "exec_interpreter" : "node",
-      "exec_mode"        : "fork",
+      "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
@@ -48,7 +48,7 @@
       "watch"            : false,
       "merge_logs"       : true,
       "exec_interpreter" : "node",
-      "exec_mode"        : "fork",
+      "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
@@ -66,7 +66,7 @@
       "watch"            : false,
       "merge_logs"       : true,
       "exec_interpreter" : "node",
-      "exec_mode"        : "fork",
+      "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
@@ -84,7 +84,7 @@
       "watch"            : false,
       "merge_logs"       : true,
       "exec_interpreter" : "node",
-      "exec_mode"        : "fork",
+      "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
@@ -102,7 +102,7 @@
       "watch"            : false,
       "merge_logs"       : true,
       "exec_interpreter" : "node",
-      "exec_mode"        : "fork",
+      "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
