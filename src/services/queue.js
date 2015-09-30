@@ -17,15 +17,8 @@ export default class QueueService {
 
     amqp.connect(this[instanceUrl]).then((conn) => {
       conn.createChannel().then((channel) => {
-      	var queue = channel.assertQueue(this[instanceConfig].main, queueConfigs.queue.options).then(() => {
-          channel.prefetch(queueConfigs.PREFETCH_NUMBER);
-
           this.channel = channel;
-
-          defer.resolve({message: 'ready to consume'});
-        }, (err) => {
-          defer.reject({message: 'error on check or create queue', err: err});
-        });
+          defer.resolve({message: 'success on create or get queue channel'});
       }, (err) => {
         defer.reject({message: 'error on create or get queue channel', err: err});
       });
