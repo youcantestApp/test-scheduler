@@ -18,12 +18,10 @@ export default class SchedulerHandler {
   }
 
   execute() {
-    let defer = q.defer();
-
-    this[scheduleRepo].getByPeriod(this[configs].period).then((list) => {
+    return this[scheduleRepo].getByPeriod(this[configs].period).then((list) => {
   		if(!list || list.length === 0) {
         console.log(`none scheduled test for period ${this[configs].period}`);
-        defer.reject({message: 'none to schedule'});
+        process.exit(0);
       }
 
       this[queueService].prepare().then((msg) => {
@@ -38,24 +36,20 @@ export default class SchedulerHandler {
 
           q.all(arr).then(() => {
             console.log('all published');
-            defer.resolve({message: 'success all published'});
+            process.exit(0);
           },() => {
             console.log('some errors on publish');
-            defer.reject({message: 'error on publish'});
+            process.exit(0);
           })
         }
         catch (err) {
           console.log('error on publish queue messages', err);
-
-          defer.reject({message: 'error on publish queue messages'});
+          process.exit(0);
         }
       },(err) => {
         console.log('error on prepare', err);
-
-        defer.reject({message: 'error on prepare'});
+        process.exit(0);
       });
     });
-
-    return defer.promise;
   }
 }
