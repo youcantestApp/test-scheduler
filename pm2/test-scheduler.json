@@ -13,7 +13,8 @@
       "merge_logs"       : true,
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
-      "autorestart"      : true,
+      "autorestart"      : false,
+      "force" : true,
       "vizion"           : false,
       "env": {
         "NODE_ENV": "production"
@@ -32,6 +33,7 @@
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
+      "force" : true,
       "vizion"           : false,
       "env": {
         "NODE_ENV": "production"
@@ -49,6 +51,7 @@
       "merge_logs"       : true,
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
+      "force" : true,
       "autorestart"      : false,
       "vizion"           : false,
       "env": {
@@ -68,6 +71,7 @@
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
+      "force" : true,
       "vizion"           : false,
       "env": {
         "NODE_ENV": "production"
@@ -86,6 +90,7 @@
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
+      "force" : true,
       "vizion"           : false,
       "env": {
         "NODE_ENV": "production"
@@ -104,6 +109,7 @@
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
       "autorestart"      : false,
+      "force" : true,
       "vizion"           : false,
       "env": {
         "NODE_ENV": "production"
