@@ -13,7 +13,7 @@
       "merge_logs"       : true,
       "exec_interpreter" : "node",
       "exec_mode"  : "cluster_mode",
-      "autorestart"      : false,
+      "autorestart"      : true,
       "vizion"           : false,
       "env": {
         "NODE_ENV": "production"
