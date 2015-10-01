@@ -1,0 +1,50 @@
+{
+  "apps":
+  [
+    {
+      "name"             : "test-scheduler-1-minutes",
+      "args"             : ["-p 1"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 * * * * *",
+    },
+    {
+      "name"             : "test-scheduler-5-minutes",
+      "args"             : ["-p 5"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 */5 * * * *",
+    },
+    {
+      "name"             : "test-scheduler-10-minutes",
+      "args"             : ["-p 10"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 */10 * * * *",
+    },
+    {
+      "name"             : "test-scheduler-30-minutes",
+      "args"             : ["-p 30"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 */30 * * * *",
+    },
+    {
+      "name"             : "test-scheduler-60-minutes",
+      "args"             : ["-p 60"],
+      "script"           : "./dist/index.js",
+      "node_args"        : ["--harmony"],
+      "log_date_format"  : "YYYY-MM-DD HH:mm:ss Z",
+      "instances"        : 1,
+      "cron_restart"     : "0 0 * * * *",
+    }
+  ]
+}

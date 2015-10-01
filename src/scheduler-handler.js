@@ -21,7 +21,7 @@ export default class SchedulerHandler {
     return this[scheduleRepo].getByPeriod(this[configs].period).then((list) => {
   		if(!list || list.length === 0) {
         console.log(`none scheduled test for period ${this[configs].period}`);
-        process.exit(0);
+        return;
       }
 
       this[queueService].prepare().then((msg) => {
@@ -36,19 +36,19 @@ export default class SchedulerHandler {
 
           q.all(arr).then(() => {
             console.log('all published');
-            process.exit(0);
+            return;
           },() => {
             console.log('some errors on publish');
-            process.exit(0);
+            return;
           })
         }
         catch (err) {
           console.log('error on publish queue messages', err);
-          process.exit(0);
+          return;
         }
       },(err) => {
         console.log('error on prepare', err);
-        process.exit(0);
+        return;
       });
     });
   }
